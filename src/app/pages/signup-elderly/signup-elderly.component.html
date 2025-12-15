@@ -1,56 +1,103 @@
 <div class="signup-elderly-container">
-  <h1>Elderly Sign Up</h1>
-  <p class="subtitle">We're excited to connect you with a pen pal!</p>
+  <!-- Step 1: Create Account -->
+  <div class="content-wrapper" *ngIf="currentStep === 1">
+    <div class="form-wrapper">
+      <h1 class="page-title">Create your account</h1>
 
-  <form class="signup-form" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="name">Full Name</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        [(ngModel)]="formData.name"
-        required
-        class="form-input"
-      >
+      <div class="form-content">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            [(ngModel)]="formData.name"
+            class="form-input"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="age">Age:</label>
+          <input
+            type="number"
+            id="age"
+            name="age"
+            [(ngModel)]="formData.age"
+            class="form-input"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="city">City:</label>
+          <input
+            type="text"
+            id="city"
+            name="city"
+            [(ngModel)]="formData.city"
+            class="form-input"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="nursingHome">Nursing home:</label>
+          <input
+            type="text"
+            id="nursingHome"
+            name="nursingHome"
+            [(ngModel)]="formData.nursingHome"
+            class="form-input"
+          >
+        </div>
+
+        <div class="button-container">
+          <button type="button" class="continue-btn" (click)="goToNextStep()">Click to continue</button>
+        </div>
+      </div>
     </div>
 
-    <div class="form-group">
-      <label for="email">Email Address</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        [(ngModel)]="formData.email"
-        required
-        class="form-input"
-      >
+    <div class="right-panel">
+      <img src="assets/letters-right.png" alt="Letters" class="panel-img">
+    </div>
+  </div>
+
+  <div class="content-wrapper" *ngIf="currentStep === 2">
+    <div class="form-wrapper">
+      <h1 class="page-title">Additional Information</h1>
+
+      <form class="form-content" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            [(ngModel)]="formData.email"
+            required
+            class="form-input"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="interests">Your Interests & Hobbies:</label>
+          <textarea
+            id="interests"
+            name="interests"
+            [(ngModel)]="formData.interests"
+            rows="4"
+            required
+            class="form-input"
+          ></textarea>
+        </div>
+
+        <div class="button-container">
+          <button type="button" class="back-btn" (click)="goToPreviousStep()">Back</button>
+          <button type="submit" class="continue-btn">Submit</button>
+        </div>
+      </form>
     </div>
 
-    <div class="form-group">
-      <label for="age">Age</label>
-      <input
-        type="number"
-        id="age"
-        name="age"
-        [(ngModel)]="formData.age"
-        required
-        class="form-input"
-      >
+    <div class="right-panel">
+      <img src="assets/letters-right.png" alt="Letters" class="panel-img">
     </div>
-
-    <div class="form-group">
-      <label for="interests">Your Interests & Hobbies</label>
-      <textarea
-        id="interests"
-        name="interests"
-        [(ngModel)]="formData.interests"
-        rows="4"
-        required
-        class="form-input"
-      ></textarea>
-    </div>
-
-    <button type="submit" class="submit-btn">Sign Up</button>
-  </form>
+  </div>
 </div>

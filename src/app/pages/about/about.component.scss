@@ -1,140 +1,123 @@
 .about-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2rem;
+  width: 100%;
   height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+
+.left-panel {
+  width: 65%;
+  padding: 4rem 7rem;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  background-color: #ede9db;
 }
 
-.about-header {
-  text-align: center;
-  padding: 3rem 0;
-
-  h1 {
-    font-size: 3rem;
+.intro-section {
+  .intro-text {
+    font-size: 2.1rem;
+    font-weight: bold;
     color: #2c3e50;
-    margin-bottom: 1rem;
-  }
-
-  .subtitle {
-    font-size: 1.3rem;
-    color: #666;
-  }
-}
-
-.mission {
-  padding: 3rem 0;
-  text-align: center;
-
-  h2 {
-    font-size: 2.2rem;
-    color: #2c3e50;
-    margin-bottom: 1.5rem;
-  }
-
-  p {
-    font-size: 1.2rem;
-    color: #666;
-    line-height: 1.8;
-    max-width: 800px;
+    line-height: 1.9;
+    font-family: 'Century Gothic', sans-serif;
+    text-align: center;
     margin: 0 auto;
+    padding: 0 5rem;
   }
 }
 
-.why-letters {
-  padding: 3rem 0;
-
-  h2 {
-    font-size: 2.2rem;
-    color: #2c3e50;
-    margin-bottom: 2rem;
-    text-align: center;
-  }
-
-  .benefits {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-
-  .benefit-card {
-    background-color: #fff;
-    border: 2px solid #f3e2c5;
-    border-radius: 12px;
-    padding: 2rem;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    }
-
-    h3 {
-      font-size: 1.5rem;
-      color: #2c3e50;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      color: #666;
-      line-height: 1.6;
-    }
-  }
-}
-
-.learn-more-section {
-  padding: 3rem 0;
-  text-align: center;
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  margin-top: 2rem;
-
-  h2 {
-    font-size: 2rem;
-    color: #2c3e50;
-    margin-bottom: 1rem;
-  }
-
-  p {
-    font-size: 1.1rem;
-    color: #666;
+.how-it-works-section {
+  .section-title {
+    font-size: 1.8rem;
+    color: #800000;
     margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    font-family: 'Century Gothic', sans-serif;
+    font-weight: 600;
+    border-bottom: 2px solid #800000;
+    display: inline-block;
   }
 
-  .detail-link {
-    display: inline-block;
-    background-color: #8b6f47;
-    color: #fff;
-    padding: 1rem 2.5rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
+  .steps-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: step-counter;
 
-    &:hover {
-      background-color: #6d5636;
+    li {
+      font-size: 1.3rem;
+      color: black;
+      line-height: 1.9;
+      padding-left: 4rem;
+      position: relative;
+      font-family: 'Century Gothic', sans-serif;
+      counter-increment: step-counter;
+      max-width: 900px;
+
+      &:before {
+        content: counter(step-counter) ".";
+        position: absolute;
+        left: 0;
+        color: #800000;
+        font-weight: bold;
+        font-size: 1.4rem;
+        width: 4rem;
+        text-align: center;
+      }
     }
   }
 }
 
-@media (max-width: 768px) {
-  .about-header {
-    h1 {
-      font-size: 2.2rem;
-    }
+.right-panel {
+  width: 35%;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  height: 100%;
+  flex-shrink: 0;
 
-    .subtitle {
-      font-size: 1.1rem;
-    }
+  .panel-img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: right;
+  }
+}
+
+@media (max-width: 968px) {
+  .about-container {
+    flex-direction: column;
   }
 
-  .mission, .why-letters {
-    padding: 2rem 0;
+  .left-panel {
+    width: 100%;
+    padding: 3rem 2rem;
+    overflow-y: auto;
+  }
 
-    h2 {
+  .right-panel {
+    display: none;
+  }
+
+  .intro-section .intro-text {
+    font-size: 1.4rem;
+  }
+
+  .how-it-works-section {
+    .section-title {
       font-size: 1.8rem;
+    }
+
+    .steps-list li {
+      font-size: 1.2rem;
+      padding-left: 3rem;
+
+      &:before {
+        font-size: 1.4rem;
+        width: 2rem;
+      }
     }
   }
 }

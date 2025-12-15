@@ -1,95 +1,187 @@
 .signup-elderly-container {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 2rem;
+  width: 100%;
   height: 100vh;
-  overflow-y: auto;
-
-  h1 {
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-
-  .subtitle {
-    font-size: 1.3rem;
-    color: #666;
-    margin-bottom: 2rem;
-    text-align: center;
-  }
+  display: flex;
+  overflow: hidden;
+  background-color: #ede9db;
+  position: relative;
 }
 
-.signup-form {
-  background-color: #fff;
-  border: 2px solid #f3e2c5;
-  border-radius: 12px;
-  padding: 2.5rem;
+.content-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.form-wrapper {
+  flex: 1;
+  padding: 4rem 4rem 4rem 10rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.page-title {
+  font-size: 3.5rem;
+  color: #800000;
+  font-family: 'Century Gothic', sans-serif;
+  font-weight: 700;
+  text-align: start;
+  margin-left: 2rem;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
 }
 
 .form-group {
-  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
 
   label {
-    display: block;
-    font-size: 1.3rem;
-    font-weight: 600;
+    font-size: 2.2rem;
     color: #2c3e50;
-    margin-bottom: 0.75rem;
+    font-family: 'Beautifully Delicious', cursive;
+    font-weight: 600;
+    margin-left: 2rem;
   }
 
   .form-input {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1.2rem;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    transition: border-color 0.3s ease;
+    width: 50%;
+    padding: 1.5rem 2rem;
+    font-size: 1.6rem;
+    border: 5px solid #a67c52;
+    border-radius: 50px;
     font-family: 'Century Gothic', sans-serif;
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: text;
+    z-index: 10;
+    position: relative;
 
     &:focus {
       outline: none;
-      border-color: #8b6f47;
+      border-color: #8b5a3c;
+      box-shadow: 0 0 0 3px rgba(166, 124, 82, 0.1);
     }
   }
 
   textarea.form-input {
     resize: vertical;
     min-height: 120px;
+    border-radius: 20px;
+    width: 60%;
   }
 }
 
-.submit-btn {
-  width: 100%;
-  background-color: #8b6f47;
-  color: #fff;
-  padding: 1.2rem 2rem;
-  font-size: 1.3rem;
+.button-container {
+  position: fixed;
+  bottom: 4rem;
+  right: 7rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.continue-btn {
+  background-color: #a72703;
+  color: #f3e8c6;
+  font-size: 2.5rem;
+  font-family: 'Century Gothic', sans-serif;
+  padding: 1.5rem 5rem;
   border: none;
-  border-radius: 8px;
-  font-weight: 600;
+  border-radius: 50px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-weight: 600;
 
   &:hover {
-    background-color: #6d5636;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(167, 39, 3, 0.3);
   }
 }
 
-@media (max-width: 768px) {
-  .signup-elderly-container {
-    padding: 2rem 1rem;
+.back-btn {
+  background-color: #8b6f47;
+  color: #f3e8c6;
+  font-size: 2.5rem;
+  font-family: 'Century Gothic', sans-serif;
+  padding: 1.5rem 5rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-weight: 600;
 
-    h1 {
-      font-size: 2rem;
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(139, 111, 71, 0.3);
+  }
+}
+
+.right-panel {
+  width: 400px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  height: 100%;
+
+  .panel-img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: right;
+  }
+}
+
+@media (max-width: 968px) {
+  .form-wrapper {
+    padding: 3rem 2rem;
+  }
+
+  .right-panel {
+    display: none;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .form-group {
+    label {
+      font-size: 1.2rem;
     }
 
-    .subtitle {
+    .form-input {
+      width: 100% !important;
       font-size: 1.1rem;
+      padding: 0.8rem 1.2rem;
+    }
+
+    textarea.form-input {
+      width: 100% !important;
     }
   }
 
-  .signup-form {
-    padding: 1.5rem;
+  .continue-btn {
+    font-size: 1.2rem;
+    padding: 0.8rem 2rem;
+  }
+
+  .back-btn {
+    font-size: 1.2rem;
+    padding: 0.8rem 2rem;
+  }
+
+  .button-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    left: auto;
+    gap: 1rem;
   }
 }
