@@ -1,1 +1,60 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+@font-face {
+  font-family: 'Century Gothic';
+  src: url('assets/fonts/centurygothic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Century Gothic';
+  src: url('assets/fonts/centurygothic_bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brittany';
+  src: url('assets/fonts/BrittanySignature.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Century Gothic', sans-serif;
+}
+
+body {
+  font-family: 'Century Gothic', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  line-height: 1.6;
+  color: #2c3e50;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  background: #ede9db;
+  height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+  font-family: 'Century Gothic', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Century Gothic', sans-serif;
+  font-weight: 400;
+}
+
+input, textarea, button, select, a {
+  font-family: 'Century Gothic', sans-serif !important;
+}

@@ -1,0 +1,85 @@
+<div class="contacts-container">
+  <section class="contacts-header">
+    <h1>Contact Us</h1>
+    <p class="subtitle">We'd love to hear from you</p>
+  </section>
+
+  <div class="contact-content">
+    <section class="contact-info">
+      <h2>Get In Touch</h2>
+      <p>Have questions about our program? Want to partner with us? We're here to help!</p>
+
+      <div class="info-cards">
+        <div class="info-card">
+          <h3>Email</h3>
+          <p><a href="mailto:info@lettersofconnection.org">infolettersofconnection.org</a></p>
+        </div>
+
+        <div class="info-card">
+          <h3>Phone</h3>
+          <p><a href="tel:+1234567890">+1 (234) 567-8900</a></p>
+        </div>
+
+        <div class="info-card">
+          <h3>Address</h3>
+          <p>123 Connection Street<br>Community City, CC 12345</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-form-section">
+      <h2>Send Us a Message</h2>
+      <form class="contact-form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            [(ngModel)]="formData.name"
+            required
+            class="form-input"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            [(ngModel)]="formData.email"
+            required
+            class="form-input"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            [(ngModel)]="formData.subject"
+            required
+            class="form-input"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            [(ngModel)]="formData.message"
+            rows="5"
+            required
+            class="form-input"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </section>
+  </div>
+</div>
