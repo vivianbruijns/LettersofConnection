@@ -1,9 +1,9 @@
 ﻿name: Deploy Angular App to GitHub Pages
 
 on:
-  # Runs on pushes targeting the 'master' branch
+  # Runs on pushes targeting the 'main' branch
   push:
-    branches: ["master"]
+    branches: ["main"]
 
 # Allow this job to clone the repo and create a page deployment
 permissions:
