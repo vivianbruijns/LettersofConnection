@@ -34,7 +34,7 @@ jobs:
 
       - name: Build Project 🔧
         run: |
-          npm run build -- --base-href /lettersof-connection/
+          npm run build -- --base-href /LettersofConnection/
           cp dist/lettersof-connection/browser/index.html dist/lettersof-connection/browser/404.html
 
       - name: Setup Pages
