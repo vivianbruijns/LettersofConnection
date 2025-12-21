@@ -20,6 +20,13 @@
             "outputPath": "dist/lettersof-connection",
             "index": "src/index.html",
             "browser": "src/main.ts",
+            "loader": {
+              ".PNG": "empty",
+              ".png": "empty"
+            },
+            "externalDependencies": [
+              "assets/*"
+            ],
             "polyfills": [
               "zone.js"
             ],

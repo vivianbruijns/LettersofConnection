@@ -34,6 +34,7 @@ jobs:
 
       - name: Build Project 🔧
         run: |
+          node optimize-images.js
           npm run build -- --base-href /LettersofConnection/
           cp dist/lettersof-connection/browser/index.html dist/lettersof-connection/browser/404.html
 
