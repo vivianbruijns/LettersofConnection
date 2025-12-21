@@ -1,1 +1,80 @@
-<p>signup student works!</p>
+<div class="signup-students-container">
+  <!-- Step 1: Create Account -->
+  <div class="step-wrapper step-1" *ngIf="currentStep === 1">
+    <div class="overlay-image"></div>
+    <div class="content">
+      <h1 class="page-title">Create your account</h1>
+
+      <div class="form-content">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            [(ngModel)]="formData.name"
+            class="form-input"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="age">Age:</label>
+          <input
+            type="number"
+            id="age"
+            name="age"
+            [(ngModel)]="formData.age"
+            class="form-input"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="grade">Grade:</label>
+          <input
+            type="text"
+            id="grade"
+            name="grade"
+            [(ngModel)]="formData.grade"
+            class="form-input"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="school">School:</label>
+          <input
+            type="text"
+            id="school"
+            name="school"
+            [(ngModel)]="formData.school"
+            class="form-input"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="city">City:</label>
+          <input
+            type="text"
+            id="city"
+            name="city"
+            [(ngModel)]="formData.city"
+            class="form-input"
+          >
+        </div>
+
+        <div class="button-container">
+          <button type="button" class="continue-btn" (click)="goToNextStep()">
+            Click to continue
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 2: Additional Info -->
+  <div class="step-wrapper step-2" *ngIf="currentStep === 2">
+    <div class="content">
+      <h1 class="page-title">Step 2</h1>
+      <p>Step 2 content will go here</p>
+    </div>
+  </div>
+</div>
