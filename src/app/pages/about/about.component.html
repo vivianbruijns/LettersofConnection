@@ -5,20 +5,38 @@
     </div>
 
     <div class="how-it-works-section">
+      <img src="assets/2.PNG" alt="How it works illustration" class="section-img">
       <h2 class="section-title">How it works:</h2>
       <ul class="steps-list">
         <li>Create your account and fill in a short survey to be matched with a pen pal based on shared interests.</li>
         <li>Receive the name of your assigned pen pal and an address.</li>
         <li>Write your letter.</li>
-        <li>For parents - scroll down to read more in the Proofreading section.</li>
+        <li>For parents - scroll down to read more in the <a (click)="scrollToSection('proofreading')">Proofreading</a> section.</li>
         <li>Post your letter.</li>
         <li>Wait for the reply!</li>
-        <li>For parents - scroll down to read more in the Safety section.</li>
+        <li>For parents - scroll down to read more in the <a (click)="scrollToSection('safety')">Safety</a> section.</li>
       </ul>
+    </div>
+
+    <div class="proofreading-section">
+      <img src="assets/3.PNG" alt="Proofreading illustration" class="section-img">
+      <h2 id="proofreading" class="section-title">Proofreading</h2>
+      <p class="section-text">To add to the learning value of this experience we recommend parents to read their letters before sending them out and provide supportive corrections. Gentle guidance can help them grow in vocabulary, grammar, and self-expression, enabling steady improvement in their literacy skills—one letter at a time. With each exchange, they gain confidence, develop their voice, and discover the joy of meaningful communication.</p>
+    </div>
+
+    <div class="safety-section">
+      <img src="assets/4.PNG" alt="Safety illustration" class="section-img">
+      <h2 id="safety" class="section-title">Safety</h2>
+      <p class="section-text">Retaining safety as highest priority, we recommend parents to also read every letter their kids receive first to ensure a secure and trustworthy communication experience for all participants.</p>
+    </div>
+
+    <div class="participation-section">
+      <p class="participation-text">If your school or nursing home is not part of the project but you would like to participate, reach out to your teachers/caregivers or to us (see <a href="javascript:void(0)" (click)="navigateToContacts()" style="cursor: pointer;">Contacts</a>).</p>
     </div>
   </div>
 
   <div class="right-panel">
+    <img src="assets/postbus.PNG" alt="Postbus" class="postbus-img">
     <img src="assets/letters-right.png" alt="Letters" class="panel-img">
   </div>
 </div>

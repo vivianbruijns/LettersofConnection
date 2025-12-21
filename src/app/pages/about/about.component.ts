@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-about',
@@ -8,5 +8,16 @@ import { RouterLink } from '@angular/router';
   styleUrl: './about.component.scss'
 })
 export class AboutComponent {
+  constructor(private router: Router) {}
 
+  scrollToSection(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  navigateToContacts() {
+    this.router.navigate(['/contacts']);
+  }
 }

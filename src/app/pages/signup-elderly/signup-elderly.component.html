@@ -62,36 +62,56 @@
 
   <div class="content-wrapper" *ngIf="currentStep === 2">
     <div class="form-wrapper">
-      <h1 class="page-title">Additional Information</h1>
+      <h1 class="page-title">Let's get to know you better</h1>
 
       <form class="form-content" (ngSubmit)="onSubmit()">
         <div class="form-group">
-          <label for="email">Email Address:</label>
+          <label for="name">What are your interests?:</label>
           <input
-            type="email"
-            id="email"
-            name="email"
-            [(ngModel)]="formData.email"
-            required
+            type="text"
+            id="name"
+            name="name"
+            [(ngModel)]="formData.name"
             class="form-input"
           >
         </div>
 
         <div class="form-group">
-          <label for="interests">Your Interests & Hobbies:</label>
-          <textarea
-            id="interests"
-            name="interests"
-            [(ngModel)]="formData.interests"
-            rows="4"
-            required
+          <label for="age">What is your favorite hobby or activity?:</label>
+          <input
+            type="number"
+            id="age"
+            name="age"
+            [(ngModel)]="formData.age"
             class="form-input"
-          ></textarea>
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="city">What was your profession?:</label>
+          <input
+            type="text"
+            id="city"
+            name="city"
+            [(ngModel)]="formData.city"
+            class="form-input"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="nursingHome">How can we contact you? (telephone number or e-mail):</label>
+          <input
+            type="text"
+            id="nursingHome"
+            name="nursingHome"
+            [(ngModel)]="formData.nursingHome"
+            class="form-input"
+          >
         </div>
 
         <div class="button-container">
           <button type="button" class="back-btn" (click)="goToPreviousStep()">Back</button>
-          <button type="submit" class="continue-btn">Submit</button>
+          <button type="submit" class="continue-btn">Click to submit</button>
         </div>
       </form>
     </div>

@@ -1,14 +1,17 @@
+::ng-deep body {
+  height: 100%;
+  overflow: auto !important;
+}
+
 .about-container {
   width: 100%;
-  height: 100vh;
   display: flex;
-  overflow: hidden;
+  position: relative;
 }
 
 .left-panel {
   width: 65%;
   padding: 4rem 7rem;
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 4rem;
@@ -29,11 +32,19 @@
 }
 
 .how-it-works-section {
+  margin-left: 2rem;
+
+  .section-img {
+    width: 50px;
+    margin-top: 0.5rem;
+    vertical-align: middle;
+  }
+
   .section-title {
-    font-size: 1.8rem;
+    margin-left: 1rem;
+    font-size: 2rem;
     color: #800000;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
     font-family: 'Century Gothic', sans-serif;
     font-weight: 600;
     border-bottom: 2px solid #800000;
@@ -41,13 +52,13 @@
   }
 
   .steps-list {
+    margin-left: 3rem;
     list-style: none;
     padding: 0;
-    margin: 0;
     counter-reset: step-counter;
 
     li {
-      font-size: 1.3rem;
+      font-size: 1.5rem;
       color: black;
       line-height: 1.9;
       padding-left: 4rem;
@@ -66,6 +77,76 @@
         width: 4rem;
         text-align: center;
       }
+
+      a {
+        color: #0066cc;
+        text-decoration: underline;
+        cursor: pointer;
+        position: relative;
+        z-index: 100;
+        pointer-events: auto;
+
+        &:hover {
+          color: #004499;
+        }
+      }
+    }
+  }
+}
+
+.proofreading-section,
+.safety-section {
+  margin-left: 2rem;
+
+  .section-img {
+    width: 70px;
+    margin-top: 0.5rem;
+    vertical-align: middle;
+  }
+
+  .section-title {
+    margin-left: 1rem;
+    font-size: 2rem;
+    color: #800000;
+    margin-bottom: 1rem;
+    font-family: 'Century Gothic', sans-serif;
+    font-weight: 600;
+    border-bottom: 2px solid #800000;
+    display: inline-block;
+  }
+
+  .section-text {
+    margin-left: 5.25rem;
+    font-size: 1.5rem;
+    color: black;
+    line-height: 1.9;
+    font-family: 'Century Gothic', sans-serif;
+    max-width: 900px;
+  }
+}
+
+.participation-section {
+  .participation-text {
+    font-size: 1.5rem;
+    color: black;
+    line-height: 1.9;
+    font-family: 'Century Gothic', sans-serif;
+    text-align: center;
+    margin-left: 7rem;
+    max-width: 700px;
+
+    a {
+      color: #0066cc !important;
+      text-decoration: underline !important;
+      cursor: pointer !important;
+      pointer-events: auto !important;
+      position: relative;
+      z-index: 1000;
+      display: inline-block;
+
+      &:hover {
+        color: #004499 !important;
+      }
     }
   }
 }
@@ -74,13 +155,26 @@
   width: 35%;
   display: flex;
   align-items: stretch;
-  justify-content: flex-end;
+  justify-content: center;
   height: 100%;
   flex-shrink: 0;
 
+  .postbus-img {
+    width: 600px;
+    height: auto;
+    margin-top: 47.5vh;
+    margin-left: 450px;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    pointer-events: none;
+  }
+
   .panel-img {
+    position: fixed;
+    right: 0;
+    top: 0;
     width: auto;
-    height: 100%;
+    height: 100vh;
     object-fit: cover;
     object-position: right;
   }
