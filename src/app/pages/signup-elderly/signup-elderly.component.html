@@ -1,6 +1,6 @@
 <div class="signup-elderly-container">
   <!-- Step 1: Create Account -->
-  <div class="content-wrapper" *ngIf="currentStep === 1">
+  <div class="content-wrapper step-1" *ngIf="currentStep === 1">
     <div class="form-wrapper">
       <h1 class="page-title">Create your account</h1>
 
@@ -60,9 +60,16 @@
     </div>
   </div>
 
-  <div class="content-wrapper" *ngIf="currentStep === 2">
+  <div class="content-wrapper step-2" *ngIf="currentStep === 2">
     <div class="form-wrapper">
-      <h1 class="page-title">Let's get to know you better</h1>
+      <div class="header-container">
+        <button type="button" class="back-chevron" (click)="goToPreviousStep()">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <h1 class="page-title">Let's get to know each other better</h1>
+      </div>
 
       <form class="form-content" (ngSubmit)="onSubmit()">
         <div class="form-group">
@@ -99,18 +106,18 @@
         </div>
 
         <div class="form-group">
-          <label for="nursingHome">How can we contact you? (telephone number or e-mail):</label>
+          <label for="nursingHome">How can we contact you?:</label>
           <input
             type="text"
             id="nursingHome"
             name="nursingHome"
+            placeholder="telephone number or e-mail"
             [(ngModel)]="formData.nursingHome"
             class="form-input"
           >
         </div>
 
         <div class="button-container">
-          <button type="button" class="back-btn" (click)="goToPreviousStep()">Back</button>
           <button type="submit" class="continue-btn">Click to submit</button>
         </div>
       </form>
