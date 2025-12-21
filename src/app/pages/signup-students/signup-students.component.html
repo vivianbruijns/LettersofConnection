@@ -72,9 +72,70 @@
 
   <!-- Step 2: Additional Info -->
   <div class="step-wrapper step-2" *ngIf="currentStep === 2">
+    <div class="center-image"></div>
+    <div class="overlay-image-left"></div>
     <div class="content">
-      <h1 class="page-title">Step 2</h1>
-      <p>Step 2 content will go here</p>
+      <div class="header-container">
+        <button type="button" class="back-chevron" (click)="goToPreviousStep()">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <h1 class="page-title">A few more questions:</h1>
+      </div>
+
+      <form class="form-content" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="interests">What do you like to do after school?</label>
+          <input
+            type="text"
+            id="interests"
+            name="interests"
+            [(ngModel)]="formData.interests"
+            class="form-input"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="hobby">What’s your favorite subject at school?</label>
+          <input
+            type="text"
+            id="hobby"
+            name="hobby"
+            [(ngModel)]="formData.hobby"
+            class="form-input"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="favoriteSubject">What do you want to be when you grow up?</label>
+          <input
+            type="text"
+            id="favoriteSubject"
+            name="favoriteSubject"
+            [(ngModel)]="formData.favoriteSubject"
+            class="form-input"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="contact">How can we contact your parent/guardian?</label>
+          <input
+            type="text"
+            id="contact"
+            name="contact"
+            placeholder="telephone number or e-mail"
+            [(ngModel)]="formData.contact"
+            class="form-input"
+          >
+        </div>
+
+        <div class="button-container">
+          <button type="submit" class="continue-btn">
+            Click to submit
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
